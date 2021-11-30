@@ -6,12 +6,15 @@ create table gaps
 (
     id integer primary key
 );
+
 insert into gaps (id)
 select x
 from generate_series(1, 10000) x;
+
 delete
 from gaps
 where id between 102 and 105;
+
 delete
 from gaps
 where id between 134 and 176;
